@@ -41,22 +41,6 @@ export default class VirtualMachinesRadioGroup extends Component {
 							CPU Utilization
 						</Radio>
 						<Radio
-							key="iowait"
-							style={radioStyle}
-							name="cardType"
-							value="iowait"
-						>
-							I/O Wait
-						</Radio>
-						<Radio
-							key="mem_util"
-							style={radioStyle}
-							name="cardType"
-							value="mem_util"
-						>
-							Memory Utilization
-						</Radio>
-						<Radio
 							key="disk_util"
 							style={radioStyle}
 							name="cardType"

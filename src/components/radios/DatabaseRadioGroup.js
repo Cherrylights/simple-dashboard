@@ -33,36 +33,39 @@ export default class DatabaseRadioGroup extends Component {
 					<Col className="gutter-row" span={12}>
 						<h3>Indicators</h3>
 						<Radio
-							key="most_freq_q"
+							key="daily_volumes_last_60days"
 							style={radioStyle}
 							name="cardName"
-							value="most_freq_q"
+							value="daily_volumes_last_60days"
 						>
-							10 most frequent queries
+							Daily Volumes Last 60 days
 						</Radio>
 						<Radio
-							key="q_exec_time"
+							key="daily_amount_volumes_last20"
 							style={radioStyle}
 							name="cardName"
-							value="q_exec_time"
+							value="daily_amount_volumes_last20"
 						>
-							Average query execution time
+							Daily Amount Volumes Last 20 days
+						</Radio>
+					</Col>
+					<Col className="gutter-row" span={12}>
+						<h3>Indicators</h3>
+						<Radio
+							key="avg_tps_last_7_days"
+							style={radioStyle}
+							name="cardName"
+							value="avg_tps_last_7_days"
+						>
+							Average TPS in Last 7 Days
 						</Radio>
 						<Radio
-							key="db_uptime"
+							key="top_tps_last_31_days"
 							style={radioStyle}
 							name="cardName"
-							value="db_uptime"
+							value="top_tps_last_31_days"
 						>
-							Uptime
-						</Radio>
-						<Radio
-							key="other-stuff"
-							style={radioStyle}
-							name="cardName"
-							value="other-stuff"
-						>
-							Other Stuff
+							Top TPS Per Day in Last 31 Days
 						</Radio>
 					</Col>
 				</Row>

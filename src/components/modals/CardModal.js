@@ -9,7 +9,6 @@ import {
 	FaDatabase
 } from "react-icons/fa";
 
-import CheckboxGroup from "../checkboxs/CheckboxGroup";
 import SelectWithSearch from "../selects/SelectWithSearch";
 import FinancialInstitutionsRadioGroup from "../radios/FinancialInstitutionsRadioGroup";
 import VirtualMachinesRadioGroup from "../radios/VirtualMachinesRadioGroup";
@@ -25,7 +24,6 @@ import {
 	handleSelectChange,
 	makeid
 } from "../../helpers/functions";
-import { PhxLogo } from "../../helpers/PhxLogo";
 
 const { TabPane } = Tabs;
 
@@ -37,7 +35,7 @@ class CardModal extends Component {
 			category: "",
 			fin_inst: "core_visa",
 			cardType: "",
-			node: "VLAD_DEV",
+			node: "TORONTO",
 			vm: "",
 			activeKey: "1",
 			cardName: "",
@@ -56,7 +54,7 @@ class CardModal extends Component {
 			category: "",
 			fin_inst: "core_visa",
 			cardType: "",
-			node: "VLAD_DEV",
+			node: "TORONTO",
 			vm: "",
 			activeKey: activeKey,
 			cardName: "",
@@ -69,10 +67,40 @@ class CardModal extends Component {
 
 		if (this.state.activeKey === "1") {
 			switch (this.state.cardName) {
-				case "connection_status": {
+				case "tps_on_node": {
 					this.props.addCard(
 						{
-							chartType: "connection_status",
+							chartType: "tps_on_node",
+							i: makeid(10),
+							x: (this.cards.length * 2) % (this.state.cols || 12),
+							y: Infinity, // puts it at the bottom
+							w: 4,
+							h: 8,
+							minW: 4,
+							maxW: 8,
+							minH: 4,
+							maxH: 8,
+							params: {
+								fin_inst: this.state.fin_inst,
+								node: this.state.node,
+								cardName: "Connection Status",
+								size: "full",
+								height: {
+									minimum: 2,
+									normal: 4,
+									full: 8
+								}
+							}
+						},
+						this.props.dashboardId
+					);
+					break;
+				}
+
+				case "issuer_auth_times": {
+					this.props.addCard(
+						{
+							chartType: "issuer_auth_times",
 							i: makeid(10),
 							x: (this.cards.length * 2) % (this.state.cols || 12),
 							y: Infinity, // puts it at the bottom
@@ -85,7 +113,7 @@ class CardModal extends Component {
 							params: {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
-								cardName: "Connection Status",
+								cardName: "Issuer Auth Times",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -99,10 +127,10 @@ class CardModal extends Component {
 					break;
 				}
 
-				case "inst_info": {
+				case "issuer_approval": {
 					this.props.addCard(
 						{
-							chartType: "inst_info",
+							chartType: "issuer_approval",
 							i: makeid(10),
 							x: (this.cards.length * 2) % (this.state.cols || 12),
 							y: Infinity, // puts it at the bottom
@@ -115,7 +143,7 @@ class CardModal extends Component {
 							params: {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
-								cardName: "Institution Info",
+								cardName: "Issuer Approval Ratio",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -177,65 +205,6 @@ class CardModal extends Component {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
 								cardName: "CPU Utilization",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-				case "iowait": {
-					this.props.addCard(
-						{
-							chartType: "iowait",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity,
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 2,
-							maxH: 12,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "I/O wait",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
-				case "mem_util": {
-					this.props.addCard(
-						{
-							chartType: "mem_util",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity,
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 2,
-							maxH: 12,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Memory Utilization",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -314,66 +283,6 @@ class CardModal extends Component {
 					break;
 				}
 
-				case "daily_volumes_last_60days": {
-					this.props.addCard(
-						{
-							chartType: "daily_volumes_last_60days",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Daily Volumes Last 60 Days",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
-				case "daily_amount_volumes_last20": {
-					this.props.addCard(
-						{
-							chartType: "daily_amount_volumes_last20",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Daily Amount Volumes Last 20 Days",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
 				case "top_merchants_declines": {
 					this.props.addCard(
 						{
@@ -421,6 +330,127 @@ class CardModal extends Component {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
 								cardName: "Merchant Active/Inactive Status",
+								size: "normal",
+								height: {
+									minimum: 2,
+									normal: 4,
+									full: 8
+								}
+							}
+						},
+						this.props.dashboardId
+					);
+					break;
+				}
+
+				case "core_modules_status": {
+					this.props.addCard(
+						{
+							chartType: "core_modules_status",
+							i: makeid(10),
+							x: (this.cards.length * 2) % (this.state.cols || 12),
+							y: Infinity, // puts it at the bottom
+							w: 4,
+							h: 12,
+							minW: 4,
+							maxW: 8,
+							minH: 4,
+							maxH: 12,
+							params: {
+								fin_inst: this.state.fin_inst,
+								node: this.state.node,
+								cardName: "Core Modules Status",
+								size: "full",
+								height: {
+									minimum: 2,
+									normal: 4,
+									full: 12
+								}
+							}
+						},
+						this.props.dashboardId
+					);
+					break;
+				}
+
+				default: {
+					this.props.addCard(
+						{
+							chartType: "4",
+							i: makeid(10),
+							x: (this.cards.length * 2) % (this.state.cols || 12),
+							y: Infinity, // puts it at the bottom
+							w: 4,
+							h: 4,
+							minW: 4,
+							maxW: 8,
+							minH: 4,
+							maxH: 4,
+							params: {
+								fin_inst: this.state.fin_inst,
+								node: this.state.node,
+								cardName: this.state.cardName,
+								size: "normal",
+								height: {
+									minimum: 2,
+									normal: 4,
+									full: 8
+								}
+							}
+						},
+						this.props.dashboardId
+					);
+				}
+			}
+		} else if (this.state.activeKey === "4") {
+			switch (this.state.cardName) {
+				case "daily_volumes_last_60days": {
+					this.props.addCard(
+						{
+							chartType: "daily_volumes_last_60days",
+							i: makeid(10),
+							x: (this.cards.length * 2) % (this.state.cols || 12),
+							y: Infinity, // puts it at the bottom
+							w: 4,
+							h: 4,
+							minW: 4,
+							maxW: 8,
+							minH: 4,
+							maxH: 4,
+							params: {
+								fin_inst: this.state.fin_inst,
+								node: this.state.node,
+								cardName: "Daily Volumes Last 60 Days",
+								size: "normal",
+								height: {
+									minimum: 2,
+									normal: 4,
+									full: 8
+								}
+							}
+						},
+						this.props.dashboardId
+					);
+					break;
+				}
+
+				case "daily_amount_volumes_last20": {
+					this.props.addCard(
+						{
+							chartType: "daily_amount_volumes_last20",
+							i: makeid(10),
+							x: (this.cards.length * 2) % (this.state.cols || 12),
+							y: Infinity, // puts it at the bottom
+							w: 4,
+							h: 4,
+							minW: 4,
+							maxW: 8,
+							minH: 4,
+							maxH: 4,
+							params: {
+								fin_inst: this.state.fin_inst,
+								node: this.state.node,
+								cardName: "Daily Amount Volumes Last 20 Days",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -494,152 +524,9 @@ class CardModal extends Component {
 					break;
 				}
 
-				case "issuer_auth_times": {
-					this.props.addCard(
-						{
-							chartType: "issuer_auth_times",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Issuer Auth Times",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
-				case "issuer_approval": {
-					this.props.addCard(
-						{
-							chartType: "issuer_approval",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Issuer Approval Ratio",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
-				case "core_modules_status": {
-					this.props.addCard(
-						{
-							chartType: "core_modules_status",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Core Modules Status",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 12
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
-				default: {
-					this.props.addCard(
-						{
-							chartType: "4",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: this.state.cardName,
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-				}
+				default:
+					return;
 			}
-		} else if (this.state.activeKey === "4") {
-			this.props.addCard(
-				{
-					chartType: "daily-summary",
-					i: makeid(10),
-					x: (this.cards.length * 2) % (this.state.cols || 12),
-					y: Infinity,
-					w: 4,
-					h: 4,
-					minW: 4,
-					maxW: 8,
-					minH: 4,
-					maxH: 4,
-					params: {
-						fin_inst: this.state.fin_inst,
-						node: this.state.node,
-						cardName: this.state.cardName,
-						size: "normal",
-						height: {
-							minimum: 2,
-							normal: 4,
-							full: 8
-						}
-					}
-				},
-				this.props.dashboardId
-			);
 		}
 	};
 
@@ -729,24 +616,24 @@ class CardModal extends Component {
 								<h3>Select Node</h3>
 								<SelectWithSearch
 									defaultActiveFirstOption
-									defaultValue="VLAD_DEV"
+									defaultValue="TORONTO"
 									handleSelectChange={this.handleSelectChange}
 									activeKey={this.state.activeKey}
 									data={[
 										this.state.cardName !== "inst_info" && {
 											name: "node",
-											value: "SUMMARY",
-											text: "SUMMARY"
+											value: "TORONTO",
+											text: "TORONTO"
 										},
 										{
 											name: "node",
-											value: "VLAD_DEV",
-											text: "VLAD_DEV"
+											value: "VANCOUVER",
+											text: "VANCOUVER"
 										},
 										{
 											name: "node",
-											value: "MATT_DEV",
-											text: "MATT_DEV"
+											value: "BOSTON",
+											text: "BOSTON"
 										}
 									]}
 								/>
@@ -773,19 +660,24 @@ class CardModal extends Component {
 								<h3>Select Node</h3>
 								<SelectWithSearch
 									defaultActiveFirstOption
-									defaultValue="VLAD_DEV"
+									defaultValue="TORONTO"
 									handleSelectChange={this.handleSelectChange}
 									activeKey={this.state.activeKey}
 									data={[
 										{
 											name: "node",
-											value: "VLAD_DEV",
-											text: "VLAD_DEV"
+											value: "TORONTO",
+											text: "TORONTO"
 										},
 										{
 											name: "node",
-											value: "MATT_DEV",
-											text: "MATT_DEV"
+											value: "VANCOUVER",
+											text: "VANCOUVER"
+										},
+										{
+											name: "node",
+											value: "BOSTON",
+											text: "BOSTON"
 										}
 									]}
 								/>
@@ -801,7 +693,7 @@ class CardModal extends Component {
 					<TabPane
 						tab={
 							<span className="nav-link-icon d-block">
-								<PhxLogo fill="#e6e6e6" />
+								<FaInfoCircle />
 							</span>
 						}
 						key="3"
@@ -812,19 +704,24 @@ class CardModal extends Component {
 								<h3>Select Node</h3>
 								<SelectWithSearch
 									defaultActiveFirstOption
-									defaultValue="VLAD_DEV"
+									defaultValue="TORONTO"
 									handleSelectChange={this.handleSelectChange}
 									activeKey={this.state.activeKey}
 									data={[
 										{
 											name: "node",
-											value: "VLAD_DEV",
-											text: "VLAD_DEV"
+											value: "TORONTO",
+											text: "TORONTO"
 										},
 										{
 											name: "node",
-											value: "MATT_DEV",
-											text: "MATT_DEV"
+											value: "VANCOUVER",
+											text: "VANCOUVER"
+										},
+										{
+											name: "node",
+											value: "BOSTON",
+											text: "BOSTON"
 										}
 									]}
 								/>
@@ -839,108 +736,12 @@ class CardModal extends Component {
 					<TabPane
 						tab={
 							<span className="nav-link-icon d-block">
-								<FaInfoCircle />
+								<FaDatabase />
 							</span>
 						}
 						key="4"
 					>
-						<h1>Summary End of the Day</h1>
-						<Row>
-							<Col span={8}>
-								<SelectWithSearch
-									handleSelectChange={this.handleSelectChange}
-									activeKey={this.state.activeKey}
-									placeholder="SELECT SYSTEM"
-									data={[
-										{
-											name: "sum_end_of_day",
-											value: "phoenix_ca",
-											text: "PHOENIX CANADA"
-										},
-										{
-											name: "sum_end_of_day",
-											value: "petrotrack",
-											text: "PETROTRACK"
-										},
-										{
-											name: "sum_end_of_day",
-											value: "tms",
-											text: "TMS"
-										}
-									]}
-								/>
-							</Col>
-						</Row>
-						<br />
-						<br />
-						<Row>
-							<Col span={12}>
-								<CheckboxGroup
-									handleChange={this.handleChange}
-									activeKey={this.state.activeKey}
-									data={[
-										{ label: "Some setting", value: "Some setting" },
-										{
-											label: "Monitoring tool enable",
-											value: "Monitoring tool enable"
-										},
-										{
-											label: "Show connections status",
-											value: "Show connections status"
-										},
-										{
-											label: "Display real-time transactions",
-											value: "Display real-time transactions"
-										}
-									]}
-								/>
-							</Col>
-							<Col span={12}>
-								<CheckboxGroup
-									handleChange={this.handleChange}
-									activeKey={this.state.activeKey}
-									data={[
-										{ label: "Sale volumes", value: "Sale volumes" },
-										{ label: "Some statistics", value: "Some statistics" },
-										{ label: "VM status chart", value: "VM status chart" },
-										{ label: "One more setting", value: "One more setting" }
-									]}
-								/>
-							</Col>
-						</Row>
-					</TabPane>
-					<TabPane
-						tab={
-							<span className="nav-link-icon d-block">
-								<FaDatabase />
-							</span>
-						}
-						key="5"
-					>
 						<h1>Database</h1>
-						<Row>
-							<Col span={8}>
-								<SelectWithSearch
-									handleSelectChange={this.handleSelectChange}
-									activeKey={this.state.activeKey}
-									placeholder="Select DB"
-									data={[
-										{
-											name: "fin_inst",
-											value: "db-1",
-											text: "DB-1 TOR"
-										},
-										{
-											name: "fin_inst",
-											value: "db-2",
-											text: "BD-2 BR"
-										}
-									]}
-								/>
-							</Col>
-						</Row>
-						<br />
-						<br />
 						<DatabaseRadioGroup
 							handleChange={this.handleChange}
 							activeKey={this.state.activeKey}
