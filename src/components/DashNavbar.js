@@ -16,13 +16,13 @@ class DashNavbar extends React.Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener("scroll", () => {
-			if (window.scrollY > 100) {
-				this.nav.current.classList.add("shrink");
-			} else {
-				this.nav.current.classList.remove("shrink");
-			}
-		});
+		// document.addEventListener("scroll", () => {
+		// 	if (window.scrollY > 100) {
+		// 		this.nav.current.classList.add("shrink");
+		// 	} else {
+		// 		this.nav.current.classList.remove("shrink");
+		// 	}
+		// });
 	}
 	render() {
 		const currentDashboard = this.props.dashboards.filter(
