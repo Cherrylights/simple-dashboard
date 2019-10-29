@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { toggleSidebar } from "../redux/actions/sidebarActions";
-// import { Timeline, TimelineEvent } from "react-event-timeline";
 import { Timeline, Icon } from "antd";
 import { Drawer, Card } from "antd";
 
