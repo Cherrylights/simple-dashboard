@@ -4,115 +4,115 @@
 			"start_time": "Wed Oct 16 13:40:29 2019"
 		},
 		"modules": {
-			"core_batch": {
+			"component one": {
 				"pid": "1502",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_visadirect": {
+			"component two": {
 				"pid": "0",
 				"status": "STOPPED",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_amex": {
+			"component three": {
 				"pid": "1503",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_mc": {
+			"component four": {
 				"pid": "1504",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_saf": {
+			"component five": {
 				"pid": "1505",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_visa": {
+			"component six": {
 				"pid": "1506",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_discover": {
+			"component seven": {
 				"pid": "0",
 				"status": "DEAD",
 				"type": "Interface",
 				"restarts": "999"
 			},
-			"core_fraud": {
+			"component eight": {
 				"pid": "1508",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_security": {
+			"component night": {
 				"pid": "1509",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_spdh": {
+			"component ten": {
 				"pid": "1510",
 				"status": "RUNNING",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_tcpip": {
+			"component eleven": {
 				"pid": "1511",
 				"status": "RUNNING",
 				"type": "Comms",
 				"restarts": "1"
 			},
-			"core_httpapi": {
+			"component twelve": {
 				"pid": "1512",
 				"status": "RUNNING",
 				"type": "Comms",
 				"restarts": "1"
 			},
-			"core_ssl": {
+			"component thirteen": {
 				"pid": "0",
 				"status": "STOPPED",
 				"type": "Comms",
 				"restarts": "1"
 			},
-			"core_kafka": {
+			"component fourteen": {
 				"pid": "0",
 				"status": "DEAD",
 				"type": "Comms",
 				"restarts": "999"
 			},
-			"core_file_queue": {
+			"component fifteen": {
 				"pid": "0",
 				"status": "DEAD",
 				"type": "Interface",
 				"restarts": "999"
 			},
-			"core_mqm": {
+			"component sixteen": {
 				"pid": "0",
 				"status": "DEAD",
 				"type": "Comms",
 				"restarts": "999"
 			},
-			"core_rbc_dms": {
+			"component seventeen": {
 				"pid": "0",
 				"status": "DEAD",
 				"type": "Interface",
 				"restarts": "999"
 			},
-			"core_monitor": {
+			"component eighteen": {
 				"pid": "0",
 				"status": "STOPPED",
 				"type": "Interface",
 				"restarts": "1"
 			},
-			"core_stats": {
+			"component nineteen": {
 				"pid": "50132",
 				"status": "RUNNING",
 				"type": "Interface",
