@@ -29,7 +29,7 @@ class TopTPS31 extends Component {
 	}
 
 	componentDidMount() {
-		this.getData("get_report", { report_type: "top_tps_last_31_days" }, null);
+		this.getData("top_tps_last_31_days", undefined);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -50,7 +50,7 @@ class TopTPS31 extends Component {
 		return (
 			<Card
 				className="grid-card"
-				title={<span>{`PHX CANADA : ${this.props.el.params.cardName}`}</span>}
+				title={<span>{`CHART: ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (

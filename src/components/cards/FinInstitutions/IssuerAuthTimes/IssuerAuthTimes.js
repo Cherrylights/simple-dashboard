@@ -32,7 +32,7 @@ class IssuerAuthTimes extends React.Component {
 	}
 
 	componentDidMount() {
-		this.getData("get_report", { report_type: "issuer_auth_times" }, null);
+		this.getData("issuer_auth_times", undefined);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -54,7 +54,7 @@ class IssuerAuthTimes extends React.Component {
 		return (
 			<Card
 				className="grid-card"
-				title={<span>{`PHX CANADA : ${this.props.el.params.cardName}`}</span>}
+				title={<span>{`CHART: ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (

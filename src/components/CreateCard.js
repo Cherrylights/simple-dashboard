@@ -9,16 +9,12 @@ import DescriptionList from "./descriptionLists/DescriptionList";
 
 //Fin Institutions
 import AverageTPS7 from "./cards/FinInstitutions/AverageTPS7/AverageTPS7";
-import ConnectionStatus from "./cards/FinInstitutions/ConnectionStatus/ConnectionStatus";
-import InstitutionInfo from "./cards/FinInstitutions/InstitutionInfo/InstitutionInfo";
 import IssuerApproval from "./cards/FinInstitutions/IssuerApproval/IssuerApproval";
 import IssuerAuthTimes from "./cards/FinInstitutions/IssuerAuthTimes/IssuerAuthTimes";
 import TopTPS31 from "./cards/FinInstitutions/TopTPS31/TopTPS31";
 
 //Virtual Machines
 import CPUutilization from "./cards/VirtualMachines/CPUutilization/CPUutilization";
-import IOwait from "./cards/VirtualMachines/IOwait/IOwait";
-import MemoryUtilization from "./cards/VirtualMachines/MemoryUtilization/MemoryUtilization";
 import DiskUtilization from "./cards/VirtualMachines/DiskUtilization/DiskUtilization";
 
 //Phoenix Canada
@@ -163,20 +159,8 @@ export default function CreateCard(props) {
 			case "cpu_utilization":
 				return <CPUutilization el={el} />;
 
-			case "iowait":
-				return <IOwait el={el} />;
-
-			case "connection_status":
-				return <ConnectionStatus el={el} />;
-
-			case "mem_util":
-				return <MemoryUtilization el={el} />;
-
 			case "disk_util":
 				return <DiskUtilization el={el} />;
-
-			case "inst_info":
-				return <InstitutionInfo el={el} />;
 
 			default:
 				return null;

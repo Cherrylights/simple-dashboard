@@ -32,7 +32,7 @@ class IssuerApproval extends Component {
 	}
 
 	componentDidMount() {
-		this.getData("get_report", { report_type: "issuer_approval" }, null);
+		this.getData("issuer_approval", undefined);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -53,7 +53,7 @@ class IssuerApproval extends Component {
 		return (
 			<Card
 				className="grid-card"
-				title={<span>{`PHX CANADA : ${this.props.el.params.cardName}`}</span>}
+				title={<span>{`CHART: ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (

@@ -30,11 +30,7 @@ class DailyVolumes60 extends React.Component {
 	}
 
 	componentDidMount() {
-		this.getData(
-			"get_report",
-			{ report_type: "daily_volumes_last_60days" },
-			null
-		);
+		this.getData("daily_volumes_last_60days", undefined);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -55,7 +51,7 @@ class DailyVolumes60 extends React.Component {
 		return (
 			<Card
 				className="grid-card"
-				title={<span>{`PHX CANADA : ${this.props.el.params.cardName}`}</span>}
+				title={<span>{`CHART: ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (

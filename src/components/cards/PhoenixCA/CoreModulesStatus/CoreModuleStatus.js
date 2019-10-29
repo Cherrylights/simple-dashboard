@@ -9,8 +9,7 @@ import { showModal } from "../../../../redux/actions/modalActions";
 
 import fusioncharts from "fusioncharts";
 import charts from "fusioncharts/fusioncharts.charts";
-import { Descriptions, Badge, Col, Row } from "antd";
-
+import { Descriptions, Badge } from "antd";
 charts(fusioncharts);
 
 class CoreModulesStatus extends React.Component {
@@ -27,23 +26,11 @@ class CoreModulesStatus extends React.Component {
 		};
 		this.getData = getData.bind(this);
 		this.timerId = 0;
-		this.getData(
-			"core_status",
-			null,
-			null,
-			this.props.el.params.node ? this.props.el.params.node : null
-		);
-		this.timerId = setInterval(() => {
-			this.getData(
-				"core_status",
-				null,
-				null,
-				this.props.el.params.node ? this.props.el.params.node : null
-			);
-		}, 30000);
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		this.getData("core_status");
+	}
 
 	componentDidUpdate(prevProps) {
 		if (this.props.isDarkTheme !== prevProps.isDarkTheme) {
@@ -57,17 +44,11 @@ class CoreModulesStatus extends React.Component {
 		}
 	}
 
-	componentWillUnmount() {
-		clearInterval(this.timerId);
-	}
-
 	render() {
 		return (
 			<Card
 				className="grid-card"
-				title={
-					<span>{`PHX CANADA: ${this.props.el.params.cardName} - ${this.props.el.params.node}`}</span>
-				}
+				title={<span>{`Chart : ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (
@@ -109,118 +90,60 @@ class CoreModulesStatus extends React.Component {
 										{this.state.data.core_switch.start_time}
 									</Descriptions.Item>
 								</Descriptions>
-								<Row style={{ marginTop: 5, marginBottom: 5 }}>
-									<Col span={24}>
-										<div style={{ textAlign: "center" }}>
-											<Badge
-												text="Dead"
-												color="#d65729"
-												style={{ marginRight: 15 }}
-											/>
-											<Badge
-												text="Up and Running"
-												status="default"
-												className="badge-runnnig"
-												style={{ marginRight: 15 }}
-											/>
-											<Badge
-												text="Stopped"
-												color="#72b5cd"
-												style={{ marginRight: 15 }}
-											/>
-										</div>
-									</Col>
-								</Row>
-
-								<div style={{ display: "inline-block" }}>
-									<List
-										grid={{
-											gutter: 5,
-											xs: 1,
-											sm: 2,
-											md: 3,
-											lg: 3,
-											xl: 3,
-											xxl: 3
-										}}
-									>
-										{Object.keys(this.state.data.modules).map((key, i) => (
-											<List.Item key={i}>
-												<Card
-													className={
-														this.state.data.modules[key].status === "RUNNING"
-															? "modules-card"
-															: this.state.data.modules[key].status === "DEAD"
-															? "modules-card-inactive alert-flashing-card"
-															: this.state.data.modules[key].status ===
-															  "STOPPED"
-															? "modules-card-inactive stopped-card"
-															: "modules-card-inactive"
-													}
-													title={key}
-													onClick={() =>
-														this.state.data.modules[key].status === "RUNNING" &&
-														this.props.showModal("CoreModuleInfoModal", {
-															module: key
-														})
-													}
-												>
-													<div style={{ fontSize: "0.8rem" }}>
-														{/* Type: {this.state.data.modules[key].type}
-											<br /> */}
-														Restarts: {this.state.data.modules[key].restarts}
-													</div>
-												</Card>
-											</List.Item>
-										))}
-									</List>
-								</div>
 								<br />
-								<div style={{ display: "block" }}>
-									<List
-										grid={{
-											gutter: 5,
-											xs: 1,
-											sm: 2,
-											md: 3,
-											lg: 3,
-											xl: 3,
-											xxl: 3
-										}}
-									>
-										{Object.keys(this.state.data.standalone).map((key, i) => (
-											<List.Item key={i}>
-												<Card
-													className={
-														this.state.data.standalone[key].status === "RUNNING"
-															? "modules-card"
-															: this.state.data.standalone[key].status ===
-															  "DEAD"
-															? "modules-card-inactive alert-flashing-card"
-															: this.state.data.standalone[key].status ===
-															  "STOPPED"
-															? "modules-card-inactive stopped-card"
-															: "modules-card-inactive"
-													}
-													title={key}
-													onClick={() =>
-														this.state.data.standalone[key].status ===
-															"RUNNING" &&
-														this.props.showModal("CoreModuleInfoModal", {
-															module: key
-														})
-													}
-												>
-													<div style={{ fontSize: "0.8rem" }}>
-														{/* Type: {this.state.data.modules[key].type}
-													<br /> */}
-														Restarts: {this.state.data.standalone[key].restarts}
-													</div>
-												</Card>
-											</List.Item>
-										))}
-									</List>
-								</div>
+								<List
+									grid={{
+										gutter: 5,
+										xs: 1,
+										sm: 2,
+										md: 4,
+										lg: 4,
+										xl: 4,
+										xxl: 4
+									}}
+								>
+									{Object.keys(this.state.data.modules).map((key, i) => (
+										<List.Item key={i}>
+											<Card
+												className={
+													this.state.data.modules[key].status === "RUNNING"
+														? "modules-card"
+														: "modules-card-inactive"
+												}
+												title={key}
+											>
+												{this.state.data.modules[key].status === "RUNNING" ? (
+													<Badge
+														status="default"
+														text="Running"
+														color="#11bf85"
+													/>
+												) : this.state.data.modules[key].status ===
+												  "STOPPED" ? (
+													<Badge
+														status="default"
+														text="Stopped"
+														color="#4aa4ed"
+													/>
+												) : this.state.data.modules[key].status === "DEAD" ? (
+													<Badge status="default" text="Dead" color="#d65729" />
+												) : (
+													<Badge
+														status="default"
+														text="Unknown"
+														color="#c0c7cc"
+													/>
+												)}
+												<br />
+												<div style={{ fontSize: "0.7rem" }}>
+													Type: {this.state.data.modules[key].type}
+													<br />
+													Restarts: {this.state.data.modules[key].restarts}
+												</div>
+											</Card>
+										</List.Item>
+									))}
+								</List>
 							</div>
 						)}
 					</div>

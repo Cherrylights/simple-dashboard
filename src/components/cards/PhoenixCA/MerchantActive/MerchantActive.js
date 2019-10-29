@@ -31,11 +31,7 @@ class MerchantActive extends Component {
 	}
 
 	componentDidMount() {
-		this.getData(
-			"get_report",
-			{ report_type: "merchant_active_inactive" },
-			null
-		);
+		this.getData("merchant_active_inactive", undefined);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -56,7 +52,7 @@ class MerchantActive extends Component {
 		return (
 			<Card
 				className="grid-card"
-				title={<span>{`PHX CANADA : ${this.props.el.params.cardName}`}</span>}
+				title={<span>{`CHART: ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (

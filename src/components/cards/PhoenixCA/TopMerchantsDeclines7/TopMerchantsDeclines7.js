@@ -33,7 +33,7 @@ class TopMerchantsDeclines7 extends Component {
 	}
 
 	componentDidMount() {
-		this.getData("get_report", { report_type: "top_merchants_declines" }, null);
+		this.getData("top_merchants_declines", undefined);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -57,7 +57,7 @@ class TopMerchantsDeclines7 extends Component {
 		return (
 			<Card
 				className="grid-card"
-				title={<span>{`PHX CANADA : ${this.props.el.params.cardName}`}</span>}
+				title={<span>{`CHART: ${this.props.el.params.cardName}`}</span>}
 				extra={<CardDropdown el={this.props.el} />}
 			>
 				{this.state.data ? (
