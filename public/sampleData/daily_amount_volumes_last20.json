@@ -1,0 +1,44 @@
+{
+	"data": [
+		{
+			"toolText": "Sep 06 - $90",
+			"label": "06",
+			"value": 90
+		},
+		{
+			"toolText": "Sep 09 - $256",
+			"label": "09",
+			"value": 256
+		},
+		{
+			"toolText": "Sep 12 - $1",
+			"label": "12",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 16 - $1",
+			"label": "16",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 20 - $82",
+			"label": "20",
+			"value": 82
+		},
+		{
+			"toolText": "Sep 23 - $20",
+			"label": "23",
+			"value": 20
+		},
+		{
+			"toolText": "Sep 24 - $42",
+			"label": "24",
+			"value": 42
+		},
+		{
+			"toolText": "Sep 25 - $188",
+			"label": "25",
+			"value": 188
+		}
+	]
+}

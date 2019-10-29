@@ -1,0 +1,89 @@
+{
+	"data": [
+		{
+			"toolText": "Aug 26 at 14:10:49, 1 TPS",
+			"label": "Aug 26",
+			"value": 1
+		},
+		{
+			"toolText": "Aug 27 at 07:58:06, 1 TPS",
+			"label": "Aug 27",
+			"value": 1
+		},
+		{
+			"toolText": "Aug 28 at 10:43:38, 1 TPS",
+			"label": "Aug 28",
+			"value": 1
+		},
+		{
+			"toolText": "Aug 29 at 12:43:04, 1 TPS",
+			"label": "Aug 29",
+			"value": 1
+		},
+		{
+			"toolText": "Aug 30 at 15:31:02, 1 TPS",
+			"label": "Aug 30",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 5 at 10:05:02, 1 TPS",
+			"label": "Sep 5",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 6 at 09:44:04, 1 TPS",
+			"label": "Sep 6",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 9 at 16:57:55, 45 TPS",
+			"label": "Sep 9",
+			"value": 45
+		},
+		{
+			"toolText": "Sep 10 at 14:10:31, 105 TPS",
+			"label": "Sep 10",
+			"value": 105
+		},
+		{
+			"toolText": "Sep 11 at 11:46:26, 44 TPS",
+			"label": "Sep 11",
+			"value": 44
+		},
+		{
+			"toolText": "Sep 12 at 14:23:09, 1 TPS",
+			"label": "Sep 12",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 16 at 21:53:56, 1 TPS",
+			"label": "Sep 16",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 18 at 10:22:36, 3 TPS",
+			"label": "Sep 18",
+			"value": 3
+		},
+		{
+			"toolText": "Sep 20 at 14:40:19, 4 TPS",
+			"label": "Sep 20",
+			"value": 4
+		},
+		{
+			"toolText": "Sep 21 at 00:00:10, 1 TPS",
+			"label": "Sep 21",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 23 at 10:37:34, 1 TPS",
+			"label": "Sep 23",
+			"value": 1
+		},
+		{
+			"toolText": "Sep 24 at 09:08:09, 1 TPS",
+			"label": "Sep 24",
+			"value": 1
+		}
+	]
+}

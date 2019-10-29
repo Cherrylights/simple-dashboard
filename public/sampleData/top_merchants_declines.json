@@ -1,0 +1,29 @@
+{
+	"data": [
+		{
+			"toolText": "MID: 0030123456789 [Declined: 1172,  Approved: 82,  Decline Avg: 93%]",
+			"label": "TEST STORE",
+			"value": 93
+		},
+		{
+			"toolText": "MID: 0030155555555 [Declined: 2,  Approved: 8,  Decline Avg: 20%]",
+			"label": "GATEWAY TEST",
+			"value": 20
+		},
+		{
+			"toolText": "MID: 1111111250531 [Declined: 2,  Approved: 0,  Decline Avg: 100%]",
+			"label": "T1 TEST",
+			"value": 100
+		},
+		{
+			"toolText": "MID: 1111111248526 [Declined: 2,  Approved: 0,  Decline Avg: 100%]",
+			"label": "T1 TEST",
+			"value": 100
+		},
+		{
+			"toolText": "MID: 1111111066386 [Declined: 1,  Approved: 0,  Decline Avg: 100%]",
+			"label": "T1 TEST",
+			"value": 100
+		}
+	]
+}

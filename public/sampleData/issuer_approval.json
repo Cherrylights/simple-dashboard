@@ -1,0 +1,16 @@
+{
+	"data": [
+		{
+			"label": "AMEX",
+			"value": "100"
+		},
+		{
+			"label": "MASTERCARD",
+			"value": "100"
+		},
+		{
+			"label": "VISA",
+			"value": "100"
+		}
+	]
+}

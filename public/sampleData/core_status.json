@@ -1,0 +1,143 @@
+{
+	"data": {
+		"core_switch": {
+			"start_time": "Wed Oct 16 13:40:29 2019"
+		},
+		"modules": {
+			"core_batch": {
+				"pid": "1502",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_visadirect": {
+				"pid": "0",
+				"status": "STOPPED",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_amex": {
+				"pid": "1503",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_mc": {
+				"pid": "1504",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_saf": {
+				"pid": "1505",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_visa": {
+				"pid": "1506",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_discover": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Interface",
+				"restarts": "999"
+			},
+			"core_fraud": {
+				"pid": "1508",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_security": {
+				"pid": "1509",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_spdh": {
+				"pid": "1510",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_tcpip": {
+				"pid": "1511",
+				"status": "RUNNING",
+				"type": "Comms",
+				"restarts": "1"
+			},
+			"core_httpapi": {
+				"pid": "1512",
+				"status": "RUNNING",
+				"type": "Comms",
+				"restarts": "1"
+			},
+			"core_ssl": {
+				"pid": "0",
+				"status": "STOPPED",
+				"type": "Comms",
+				"restarts": "1"
+			},
+			"core_kafka": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Comms",
+				"restarts": "999"
+			},
+			"core_file_queue": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Interface",
+				"restarts": "999"
+			},
+			"core_mqm": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Comms",
+				"restarts": "999"
+			},
+			"core_rbc_dms": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Interface",
+				"restarts": "999"
+			},
+			"core_monitor": {
+				"pid": "0",
+				"status": "STOPPED",
+				"type": "Interface",
+				"restarts": "1"
+			},
+			"core_stats": {
+				"pid": "50132",
+				"status": "RUNNING",
+				"type": "Interface",
+				"restarts": "1"
+			}
+		},
+		"standalone": {
+			"core_alerts": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Monitor",
+				"restarts": "1"
+			},
+			"corerouter": {
+				"pid": "0",
+				"status": "DEAD",
+				"type": "Comms",
+				"restarts": "1"
+			}
+		}
+	},
+	"hdr": {
+		"request_id": "b02ebc3a6",
+		"request_status": 0,
+		"request_status_desc": "Processed",
+		"version": 1571842110
+	}
+}
