@@ -524,7 +524,7 @@ class CardModal extends Component {
 								</Col>
 							)}
 							<Col className="gutter-row" span={8}>
-								<h3>Select Node</h3>
+								<h3>Select Location</h3>
 								<SelectWithSearch
 									defaultActiveFirstOption
 									defaultValue="TORONTO"
@@ -569,7 +569,7 @@ class CardModal extends Component {
 						<h1>Tab 2</h1>
 						<Row gutter={16}>
 							<Col className="gutter-row" span={8}>
-								<h3>Select Node</h3>
+								<h3>Select Location</h3>
 								<SelectWithSearch
 									defaultActiveFirstOption
 									defaultValue="TORONTO"
@@ -614,7 +614,7 @@ class CardModal extends Component {
 						<h1>Tab 3</h1>
 						<Row gutter={16}>
 							<Col className="gutter-row" span={8}>
-								<h3>Select Node</h3>
+								<h3>Select Location</h3>
 								<SelectWithSearch
 									defaultActiveFirstOption
 									defaultValue="TORONTO"

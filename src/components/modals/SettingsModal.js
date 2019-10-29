@@ -20,7 +20,7 @@ class SettingsModal extends Component {
 			vars: {},
 			lightTheme: {
 				// "@bg-default": "#e9ecf2",
-				"@bg-default": "#ececec",
+				"@bg-default": "#f4f6f8",
 				"@border-color-base": "#cccccc",
 				"@btn-primary-bg": "#397dcc",
 				"@grid-item-elements": "#ffffff",
@@ -251,14 +251,6 @@ class SettingsModal extends Component {
 						style={{ float: "left" }}
 					>
 						Reset Theme
-					</Button>,
-					<Button
-						key="reset-data"
-						type="primary"
-						onClick={() => {}}
-						style={{ float: "left" }}
-					>
-						Clear all Data
 					</Button>,
 					<div key="ok-cancel">
 						<Button

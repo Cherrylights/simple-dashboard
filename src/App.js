@@ -16,6 +16,7 @@ import InfoSidebar from "./components/InfoSidebar";
 import TabsPanel from "./components/TabsPanel";
 
 import { defaultLightTheme, defaultDarkTheme } from "./helpers/themes";
+import dashboardData from "./dashboardData";
 
 class App extends React.Component {
 	constructor(props) {
@@ -24,6 +25,9 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
+		if (!localStorage.getItem("dashboards")) {
+			localStorage.setItem("dashboards", JSON.stringify(dashboardData));
+		}
 		this.props.fetchDashboards();
 		this.props.syncTheme();
 		let vars = {};

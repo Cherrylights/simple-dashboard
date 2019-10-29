@@ -1,6 +1,6 @@
 export const defaultLightTheme = {
 	// "@bg-default": "#e9ecf2",
-	"@bg-default": "#ececec",
+	"@bg-default": "#f4f6f8",
 	"@border-color-base": "#cccccc",
 	"@btn-primary-bg": "#397dcc",
 	"@grid-item-elements": "#ffffff",
