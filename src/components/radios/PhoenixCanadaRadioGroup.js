@@ -52,14 +52,6 @@ export default class PhoenixCanadaRadioGroup extends Component {
 							Merchant Boarding in Last 15 Months
 						</Radio>
 						<Radio
-							key="top_merchants_declines"
-							style={radioStyle}
-							name="cardName"
-							value="top_merchants_declines"
-						>
-							Merchant Top Declines in Last 7 Days
-						</Radio>
-						<Radio
 							key="merchant_active_inactive"
 							style={radioStyle}
 							name="cardName"

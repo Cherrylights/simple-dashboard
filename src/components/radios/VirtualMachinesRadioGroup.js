@@ -33,20 +33,20 @@ export default class VirtualMachinesRadioGroup extends Component {
 					<Col className="gutter-row" span={20}>
 						<h3>Hardware Info</h3>
 						<Radio
-							key="cpu_utilization"
+							key="top_merchants_declines"
 							style={radioStyle}
-							name="cardType"
-							value="cpu_utilization"
+							name="cardName"
+							value="top_merchants_declines"
 						>
-							CPU Utilization
+							Merchant Top Declines in Last 7 Days
 						</Radio>
 						<Radio
-							key="disk_util"
+							key="top_tps_last_31_days"
 							style={radioStyle}
-							name="cardType"
-							value="disk_util"
+							name="cardName"
+							value="top_tps_last_31_days"
 						>
-							Disk Utilization
+							Top TPS Per Day in Last 31 Days
 						</Radio>
 					</Col>
 				</Row>

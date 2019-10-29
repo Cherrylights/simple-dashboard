@@ -30,18 +30,7 @@ export default class FinancialInstitutionsRadioGroup extends Component {
 				name="cardName"
 			>
 				<Row gutter={16}>
-					<Col className="gutter-row" span={12}>
-						<h3>Widgets</h3>
-						<Radio
-							key="tps_on_node"
-							style={radioStyle}
-							name="cardName"
-							value="tps_on_node"
-						>
-							TPS on Node
-						</Radio>
-					</Col>
-					<Col className="gutter-row" span={12}>
+					<Col className="gutter-row" span={24}>
 						<h3>Info</h3>
 						<Radio
 							key="issuer_auth_times"

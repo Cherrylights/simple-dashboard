@@ -13,7 +13,7 @@ const settings = {
 	autoplay: true,
 	speed: 1000,
 	fade: true,
-	autoplaySpeed: 15000,
+	autoplaySpeed: 5000,
 	cssEase: "linear",
 	pauseOnHover: false
 };

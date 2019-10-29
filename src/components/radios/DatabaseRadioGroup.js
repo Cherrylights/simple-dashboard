@@ -59,14 +59,6 @@ export default class DatabaseRadioGroup extends Component {
 						>
 							Average TPS in Last 7 Days
 						</Radio>
-						<Radio
-							key="top_tps_last_31_days"
-							style={radioStyle}
-							name="cardName"
-							value="top_tps_last_31_days"
-						>
-							Top TPS Per Day in Last 31 Days
-						</Radio>
 					</Col>
 				</Row>
 			</Radio.Group>

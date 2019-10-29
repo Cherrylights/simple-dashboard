@@ -33,7 +33,7 @@ class DashNavbar extends React.Component {
 			<>
 				<header className="header-global" ref={this.nav}>
 					<div>
-						<h1 className="navbar-title">Phoenix CA Monitoring</h1>
+						<h1 className="navbar-title">Simple Dashboard</h1>
 						<div>
 							<Dropdown
 								overlay={

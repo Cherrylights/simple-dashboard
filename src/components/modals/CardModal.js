@@ -67,36 +67,6 @@ class CardModal extends Component {
 
 		if (this.state.activeKey === "1") {
 			switch (this.state.cardName) {
-				case "tps_on_node": {
-					this.props.addCard(
-						{
-							chartType: "tps_on_node",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 8,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 8,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Connection Status",
-								size: "full",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
 				case "issuer_auth_times": {
 					this.props.addCard(
 						{
@@ -188,23 +158,23 @@ class CardModal extends Component {
 			}
 		} else if (this.state.activeKey === "2") {
 			switch (this.state.cardName) {
-				case "cpu_utilization": {
+				case "top_merchants_declines": {
 					this.props.addCard(
 						{
-							chartType: "cpu_utilization",
+							chartType: "top_merchants_declines",
 							i: makeid(10),
 							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity,
+							y: Infinity, // puts it at the bottom
 							w: 4,
 							h: 4,
 							minW: 4,
 							maxW: 8,
-							minH: 2,
-							maxH: 12,
+							minH: 4,
+							maxH: 4,
 							params: {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
-								cardName: "CPU Utilization",
+								cardName: "Top Merchants Declines",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -218,23 +188,23 @@ class CardModal extends Component {
 					break;
 				}
 
-				case "disk_util": {
+				case "top_tps_last_31_days": {
 					this.props.addCard(
 						{
-							chartType: "disk_util",
+							chartType: "top_tps_last_31_days",
 							i: makeid(10),
 							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity,
+							y: Infinity, // puts it at the bottom
 							w: 4,
 							h: 4,
 							minW: 4,
 							maxW: 8,
-							minH: 2,
-							maxH: 12,
+							minH: 4,
+							maxH: 4,
 							params: {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
-								cardName: "Disk Utilization",
+								cardName: "Top TPS Last 31 Days",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -270,36 +240,6 @@ class CardModal extends Component {
 								fin_inst: this.state.fin_inst,
 								node: this.state.node,
 								cardName: "Merchant Boarding",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
-				case "top_merchants_declines": {
-					this.props.addCard(
-						{
-							chartType: "top_merchants_declines",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Top Merchants Declines",
 								size: "normal",
 								height: {
 									minimum: 2,
@@ -494,36 +434,6 @@ class CardModal extends Component {
 					break;
 				}
 
-				case "top_tps_last_31_days": {
-					this.props.addCard(
-						{
-							chartType: "top_tps_last_31_days",
-							i: makeid(10),
-							x: (this.cards.length * 2) % (this.state.cols || 12),
-							y: Infinity, // puts it at the bottom
-							w: 4,
-							h: 4,
-							minW: 4,
-							maxW: 8,
-							minH: 4,
-							maxH: 4,
-							params: {
-								fin_inst: this.state.fin_inst,
-								node: this.state.node,
-								cardName: "Top TPS Last 31 Days",
-								size: "normal",
-								height: {
-									minimum: 2,
-									normal: 4,
-									full: 8
-								}
-							}
-						},
-						this.props.dashboardId
-					);
-					break;
-				}
-
 				default:
 					return;
 			}
@@ -567,7 +477,8 @@ class CardModal extends Component {
 						}
 						key="1"
 					>
-						<h1>Financial Institutions</h1>
+						<br />
+						<h1>Tab 1</h1>
 						<Row gutter={16}>
 							{this.state.cardName !== "inst_info" && (
 								<Col className="gutter-row" span={8}>
@@ -654,7 +565,8 @@ class CardModal extends Component {
 						}
 						key="2"
 					>
-						<h1>Virtual Machines</h1>
+						<br />
+						<h1>Tab 2</h1>
 						<Row gutter={16}>
 							<Col className="gutter-row" span={8}>
 								<h3>Select Node</h3>
@@ -698,7 +610,8 @@ class CardModal extends Component {
 						}
 						key="3"
 					>
-						<h1>Phoenix Canada</h1>
+						<br />
+						<h1>Tab 3</h1>
 						<Row gutter={16}>
 							<Col className="gutter-row" span={8}>
 								<h3>Select Node</h3>
@@ -741,7 +654,8 @@ class CardModal extends Component {
 						}
 						key="4"
 					>
-						<h1>Database</h1>
+						<br />
+						<h1>Tab 4</h1>
 						<DatabaseRadioGroup
 							handleChange={this.handleChange}
 							activeKey={this.state.activeKey}

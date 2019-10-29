@@ -46,10 +46,7 @@ class InfoSidebar extends Component {
 						>
 							<p style={{ marginBottom: 0 }}>12:00</p>
 							<Card style={{ width: "100%" }}>
-								<Meta
-									title="Visa Brampton down"
-									description="Reason: TIMEOUT"
-								/>
+								<Meta title="Mission 1 failed" description="Reason: TIMEOUT" />
 							</Card>
 						</Timeline.Item>
 						<Timeline.Item
@@ -58,7 +55,25 @@ class InfoSidebar extends Component {
 						>
 							<p style={{ marginBottom: 0 }}>12:00</p>
 							<Card style={{ width: "100%" }}>
-								<Meta title="Visa Brampton up" description="Reason: TIMEOUT" />
+								<Meta title="Mission 2 success" description="Reason: PASS" />
+							</Card>
+						</Timeline.Item>
+						<Timeline.Item
+							dot={<Icon type="check-circle" style={{ fontSize: "25px" }} />}
+							color="green"
+						>
+							<p style={{ marginBottom: 0 }}>13:00</p>
+							<Card style={{ width: "100%" }}>
+								<Meta title="Mission 3 success" description="Reason: PASS" />
+							</Card>
+						</Timeline.Item>
+						<Timeline.Item
+							dot={<Icon type="check-circle" style={{ fontSize: "25px" }} />}
+							color="green"
+						>
+							<p style={{ marginBottom: 0 }}>13:20</p>
+							<Card style={{ width: "100%" }}>
+								<Meta title="Mission 4 success" description="Reason: PASS" />
 							</Card>
 						</Timeline.Item>
 					</Timeline>
